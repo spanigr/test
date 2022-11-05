@@ -36,5 +36,10 @@ public class CommonFeaturesTest extends BaseTest {
 		commonsPage.selectSubMenu(parentMenu, subMenu);
 		System.out.println("New method for mobile phone!");
 	}
+	
+	@Test(dataProvider = "menuData")
+	public void selectMobileTest(String parentMenu, String subMenu) {
+		commonsPage.selectSubMenu(parentMenu, subMenu);
+	}
 
 }
