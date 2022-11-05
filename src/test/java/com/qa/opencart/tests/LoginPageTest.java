@@ -34,6 +34,13 @@ public class LoginPageTest extends BaseTest {
 		Assert.assertTrue(url.contains(Constants.LOGIN_URL_VALUE));
 	}
 
+	@Test(priority = 0, dataProvider = "loginNegativeData", enabled = false)
+	public void loginNegativeTest3(String un, String pwd,String num,bollean val) {
+		loginPage.doLoginWrongData(un, pwd);
+		String url = loginPage.getLoginPageUrl();
+		Assert.assertTrue(url.contains(Constants.LOGIN_URL_VALUE));
+	}
+
 	@Description("login Page forgot pwd link test")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test(priority = 3)
@@ -66,11 +73,3 @@ public class LoginPageTest extends BaseTest {
 	public void loginNegativeTest1(String un, String pwd) {
 		loginPage.doLoginWrongData(un, pwd);
 	}
-
-	@Test(priority = 0, dataProvider = "loginNegativeData", enabled = false)
-	public int loginNegativeTest3(String un, String pwd,String num,bollean val) {
-		loginPage.doLoginWrongData(un, pwd);
-		return 2;
-	}
-
-}
