@@ -29,6 +29,12 @@ public class CommonFeaturesTest extends BaseTest {
 	@Test(dataProvider = "menuData")
 	public void selectMonitorsTest(String parentMenu, String subMenu) {
 		commonsPage.selectSubMenu(parentMenu, subMenu);
+		System.out.println("new line added here");
+	}
+
+	public void selectPhones(String parentMenu, String subMenu) {
+		commonsPage.selectSubMenu(parentMenu, subMenu);
+		System.out.println("New method for mobile phone!");
 	}
 
 }
