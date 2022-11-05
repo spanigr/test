@@ -30,5 +30,10 @@ public class CommonFeaturesTest extends BaseTest {
 	public void selectMonitorsTest(String parentMenu, String subMenu) {
 		commonsPage.selectSubMenu(parentMenu, subMenu);
 	}
+	
+	@Test(dataProvider = "menuData")
+	public void selectMobileTest(String parentMenu, String subMenu) {
+		commonsPage.selectSubMenu(parentMenu, subMenu);
+	}
 
 }
